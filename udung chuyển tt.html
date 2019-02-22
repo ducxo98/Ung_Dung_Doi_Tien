@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ứng dụng chuyển tiền tệ</title>
+</head>
+<body><h2>Ứng dụng chuyển tiền</h2>
+<table width="40%">
+    <tr>
+    <th> Amount </th>
+    <th> From Currency</th>
+    <th> To Currency</th>
+        <th><input type="button" value="convert"onclick = convert() ></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="Amount" placeholder="Nhap so tien can doi"></td>
+    </td>
+        <td><select name="From_currency" id="From_currency">
+        <option value ="vnd">Việt nam đồng</option>
+        <option value="Eur">Euro</option>
+        <option value="Cny">Nhân dân tệ</option>
+        </select><td/>
+        <td><select name="To_currency" id="To_Currency">
+            <option value="usd">Đô la Mỹ</option>
+            </select></td>
+    </tr>
+    <table/>
+    </form>
+    <p>Số tiền đổi : <span id="changed"></span></p>
+    <script>
+        function convert() {
+            let Amount = document.getElementById('Amount').value;
+            let From_currency = document.getElementById('From_currency');
+            let To_Currency = document.getElementById('To_Currency');
+            if (From_currency.value === 'vnd' && To_Currency.value === 'usd')
+            {document.getElementById('changed').innerHTML = parseFloat(Amount) / 23007;}
+            if (From_currency.value === 'Eur'&& To_Currency.value==='usd')
+            {document.getElementById('changed').innerHTML = Amount*1.173}
+            if (From_currency.value === 'Cny' && To_Currency.value === 'usd')
+            {document.getElementById('changed').innerHTML= Amount*0.152}
+
+
+
+
+        }
+    </script>
+
+
+
+
+</table>
+</body>
+</html>
